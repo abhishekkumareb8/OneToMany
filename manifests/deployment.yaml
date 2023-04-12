@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: chiku
+  name: chiku
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chiku
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: chiku
+    spec:
+      containers:
+      - image: demoaksacr2.azurecr.io/chiku
+        name: chiku
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
